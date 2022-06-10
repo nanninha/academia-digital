@@ -17,6 +17,10 @@ public class AlunoController {
   @Autowired
   private AlunoServiceImpl service;
 
+  public AlunoController(AlunoServiceImpl service) {
+    this.service = service;
+  }
+
   @PostMapping
   public Aluno create(@Valid @RequestBody AlunoForm form) {
     return service.create(form);
